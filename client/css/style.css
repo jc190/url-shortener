@@ -1,0 +1,23 @@
+body {
+    padding-top: 2rem;
+    font-family: 'Roboto';
+    background: #fcfcfc;
+    color: #333;
+}
+
+code {
+    background: rgba(0,0,0,.05);
+    color: #C7254E;
+    padding: 3px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #e8e8e8;
+}
+
+.wrap {
+    max-width: 1140px;
+    margin: 0 auto;
+}

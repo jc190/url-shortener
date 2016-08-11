@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- Uncomment line below if you need support for ie8/ie9 -->
+    <!-- <meta http-equiv="x-ua-compatible" content="ie=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The 3 meta tags above must come before anything else -->
+    <title>URL Shortener Service</title>
+    <!--<link rel="icon" type="image/png" href="favicon.png">-->
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- Style links -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css" media="screen" charset="utf-8">
+    <!-- <link rel="stylesheet" href="http://basehold.it/20"> -->
+    <script src="js/marked.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <header></header>
+    <div class="wrap">
+        <div id="content"></div>
+    </div>
+    <script>
+        (function() {
+            var text = '# Url Shortener Microservice\n'
+                     + 'Use a url query to return a JSON object containing the original url and a new shortened url.\n'
+                     + '****************\n'
+                     + '### __Example formats__\n'
+                     + '#### Shorten URL:\n'
+                     + '`https://fcc-api-project-jimcalhoun.c9users.io/1470787200000`\n'
+                     + '#### Use new URL:\n'
+                     + '`https://fcc-api-project-jimcalhoun.c9users.io/August 10, 2016`\n'
+                     + '****************\n'
+                     + '[[_Source Code_]](https://github.com/jc190/url-shortener)\n';
+            document.getElementById('content').innerHTML =
+            marked(text);
+        })();
+    </script> 
+    <footer></footer>
+  </body>
+</html>
