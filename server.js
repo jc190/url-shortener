@@ -1,5 +1,6 @@
 var http = require('http');
 var path = require('path');
+var fs = require('fs');
 var shortid = require('shortid');
 
 var express = require('express');
@@ -11,6 +12,16 @@ var dbURL = 'mongodb://' + process.env.IP + ':27017/shorturl';
 var server = http.createServer(app);
 
 app.use(express.static(path.resolve(__dirname, 'client')));
+
+app.get('/readme', function(req, res) {
+    fs.readFile('readme.md', 'utf8', function(err, data) {
+        if (err) {
+            return console.log(err);
+        }
+        res.jsonp(data);
+        res.end();
+    });
+});
 
 app.get('/new/*', function(req, res) {
     var obj = {};

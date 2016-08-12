@@ -22,21 +22,12 @@
         <div id="content"></div>
     </div>
     <script>
-        (function() {
-            var text = '# Url Shortener Microservice\n'
-                     + 'Use a url query to return a JSON object containing the original url and a new shortened url.\n'
-                     + '****************\n'
-                     + '### __Example formats__\n'
-                     + '#### Shorten URL:\n'
-                     + '`https://urls-jimcalhoun.c9users.io/new/http://www.google.com`\n'
-                     + '#### Use new URL:\n'
-                     + '`https://urls-jimcalhoun.c9users.io/G9ju8qp`\n'
-                     + '****************\n'
-                     + '[[_Source Code_]](https://github.com/jc190/url-shortener)\n';
-            document.getElementById('content').innerHTML =
-            marked(text);
-        })();
-    </script> 
+      function parseMD(text) {
+          document.getElementById('content').innerHTML =
+          marked(text);
+        }
+    </script>
+    <script src='https://urls-jimcalhoun.c9users.io/readme?callback=parseMD'></script> 
     <footer></footer>
   </body>
 </html>
