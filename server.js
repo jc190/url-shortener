@@ -7,7 +7,7 @@ var express = require('express');
 var app = express();
 
 var mongodb = require('mongodb').MongoClient;
-var dbURL = 'mongodb://' + process.env.IP + ':27017/shorturl';
+var dbURL = 'mongodb://localhost:27017/shorturl';
 
 var server = http.createServer(app);
 
@@ -23,12 +23,12 @@ app.get('/readme', function(req, res) {
     });
 });
 
-app.get('/new/*', function(req, res) {
+app.get('/new/:url*', function(req, res) {
     var obj = {};
-    if (/^\/new\/((http|https)(:\/\/www\.|:\/\/)(.*)(\.)(.*))/i.test(req.url)) {
+    if (/^\/new\/(http(?:s)?:\/{2})([\w\d][\w\d-]*[\w\d]\.)?([\w\d][\w\d-]*[\w\d])\.(\w+)(:\d{1,5})?(\/.*)?$/i.test(req.url)) {
         var uid = shortid.generate();
-        obj.original = req.params[0];
-        obj.new = 'https://urls-jimcalhoun.c9users.io/' + uid;
+        obj.original = req.url.slice(5);
+        obj.new = 'https://urls.jamesc.me/' + uid;
         mongodb.connect(dbURL, function(err, db) {
             if (err) {
                 return console.log(err);
